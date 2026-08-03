@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Count Down</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<script>
+			const targetDate = new Date("2026-08-16T00:00:00").getTime();
+			const interval = setInterval(() => {
+				const segundos_decenas = document.getElementById("segundos_decenas");
+				const segundos_unidades = document.getElementById("segundos_unidades");
+				const minutos_decenas = document.getElementById("minutos_decenas");
+                const minutos_unidades = document.getElementById("minutos_unidades");
+                const horas_decenas = document.getElementById("horas_decenas");
+                const horas_unidades = document.getElementById("horas_unidades");
+                const dias_decenas = document.getElementById("dias_decenas");
+                const dias_unidades = document.getElementById("dias_unidades");
+                const now = Date.now();
+				const distance = targetDate - now;
+				if (distance < 0) {
+					clearInterval(interval);
+					document.getElementById("countdown").innerText = "¡Terminó!";
+					return;
+				}
+				const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				const hours = Math.floor(
+					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+				);
+				const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				// document.getElementById("countdown").innerText =
+				// 	`${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+				switch (Math.floor(seconds / 10)) {
+					case 0:
+						segundos_decenas.style.backgroundImage = "url('/0.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 1:
+						segundos_decenas.style.backgroundImage = "url('/1.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 2:
+						segundos_decenas.style.backgroundImage = "url('/2.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 3:
+						segundos_decenas.style.backgroundImage = "url('/3.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 4:
+						segundos_decenas.style.backgroundImage = "url('/4.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 5:
+						segundos_decenas.style.backgroundImage = "url('/5.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 6:
+						segundos_decenas.style.backgroundImage = "url('/6.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 7:
+						segundos_decenas.style.backgroundImage = "url('/7.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 8:
+						segundos_decenas.style.backgroundImage = "url('/8.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+					case 9:
+						segundos_decenas.style.backgroundImage = "url('/9.png')";
+						segundos_decenas.style.backgroundSize = "contain";
+						segundos_decenas.style.backgroundPosition = "center";
+						break;
+				}
+				switch (seconds - Math.floor(seconds / 10) * 10) {
+					case 0:
+						segundos_unidades.style.backgroundImage = "url('/0.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 1:
+						segundos_unidades.style.backgroundImage = "url('/1.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 2:
+						segundos_unidades.style.backgroundImage = "url('/2.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 3:
+						segundos_unidades.style.backgroundImage = "url('/3.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 4:
+						segundos_unidades.style.backgroundImage = "url('/4.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 5:
+						segundos_unidades.style.backgroundImage = "url('/5.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 6:
+						segundos_unidades.style.backgroundImage = "url('/6.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 7:
+						segundos_unidades.style.backgroundImage = "url('/7.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 8:
+						segundos_unidades.style.backgroundImage = "url('/8.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+					case 9:
+						segundos_unidades.style.backgroundImage = "url('/9.png')";
+						segundos_unidades.style.backgroundSize = "contain";
+						segundos_unidades.style.backgroundPosition = "center";
+						break;
+				}
+                switch (Math.floor(minutes / 10)) {
+					case 0:
+						minutos_decenas.style.backgroundImage = "url('/0.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 1:
+						minutos_decenas.style.backgroundImage = "url('/1.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 2:
+						minutos_decenas.style.backgroundImage = "url('/2.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 3:
+						minutos_decenas.style.backgroundImage = "url('/3.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 4:
+						minutos_decenas.style.backgroundImage = "url('/4.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 5:
+						minutos_decenas.style.backgroundImage = "url('/5.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 6:
+						minutos_decenas.style.backgroundImage = "url('/6.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 7:
+						minutos_decenas.style.backgroundImage = "url('/7.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 8:
+						minutos_decenas.style.backgroundImage = "url('/8.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+					case 9:
+						minutos_decenas.style.backgroundImage = "url('/9.png')";
+						minutos_decenas.style.backgroundSize = "contain";
+						minutos_decenas.style.backgroundPosition = "center";
+						break;
+				}
+				switch (minutes - Math.floor(minutes / 10) * 10) {
+					case 0:
+						minutos_unidades.style.backgroundImage = "url('/0.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 1:
+						minutos_unidades.style.backgroundImage = "url('/1.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 2:
+						minutos_unidades.style.backgroundImage = "url('/2.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 3:
+						minutos_unidades.style.backgroundImage = "url('/3.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 4:
+						minutos_unidades.style.backgroundImage = "url('/4.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 5:
+						minutos_unidades.style.backgroundImage = "url('/5.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 6:
+						minutos_unidades.style.backgroundImage = "url('/6.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 7:
+						minutos_unidades.style.backgroundImage = "url('/7.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 8:
+						minutos_unidades.style.backgroundImage = "url('/8.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+					case 9:
+						minutos_unidades.style.backgroundImage = "url('/9.png')";
+						minutos_unidades.style.backgroundSize = "contain";
+						minutos_unidades.style.backgroundPosition = "center";
+						break;
+				}
+switch (Math.floor(hours / 10)) {
+					case 0:
+						horas_decenas.style.backgroundImage = "url('/0.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 1:
+						horas_decenas.style.backgroundImage = "url('/1.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 2:
+						horas_decenas.style.backgroundImage = "url('/2.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 3:
+						horas_decenas.style.backgroundImage = "url('/3.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 4:
+						horas_decenas.style.backgroundImage = "url('/4.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 5:
+						horas_decenas.style.backgroundImage = "url('/5.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 6:
+						horas_decenas.style.backgroundImage = "url('/6.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 7:
+						horas_decenas.style.backgroundImage = "url('/7.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 8:
+						horas_decenas.style.backgroundImage = "url('/8.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+					case 9:
+						horas_decenas.style.backgroundImage = "url('/9.png')";
+						horas_decenas.style.backgroundSize = "contain";
+						horas_decenas.style.backgroundPosition = "center";
+						break;
+				}
+				switch (hours - Math.floor(hours / 10) * 10) {
+					case 0:
+						horas_unidades.style.backgroundImage = "url('/0.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 1:
+						horas_unidades.style.backgroundImage = "url('/1.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 2:
+						horas_unidades.style.backgroundImage = "url('/2.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 3:
+						horas_unidades.style.backgroundImage = "url('/3.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 4:
+						horas_unidades.style.backgroundImage = "url('/4.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 5:
+						horas_unidades.style.backgroundImage = "url('/5.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 6:
+						horas_unidades.style.backgroundImage = "url('/6.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 7:
+						horas_unidades.style.backgroundImage = "url('/7.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 8:
+						horas_unidades.style.backgroundImage = "url('/8.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+					case 9:
+						horas_unidades.style.backgroundImage = "url('/9.png')";
+						horas_unidades.style.backgroundSize = "contain";
+						horas_unidades.style.backgroundPosition = "center";
+						break;
+				}
+switch (Math.floor(days / 10)) {
+					case 0:
+						dias_decenas.style.backgroundImage = "url('/0.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 1:
+						dias_decenas.style.backgroundImage = "url('/1.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 2:
+						dias_decenas.style.backgroundImage = "url('/2.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 3:
+						dias_decenas.style.backgroundImage = "url('/3.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 4:
+						dias_decenas.style.backgroundImage = "url('/4.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 5:
+						dias_decenas.style.backgroundImage = "url('/5.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 6:
+						dias_decenas.style.backgroundImage = "url('/6.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 7:
+						dias_decenas.style.backgroundImage = "url('/7.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 8:
+						dias_decenas.style.backgroundImage = "url('/8.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+					case 9:
+						dias_decenas.style.backgroundImage = "url('/9.png')";
+						dias_decenas.style.backgroundSize = "contain";
+						dias_decenas.style.backgroundPosition = "center";
+						break;
+				}
+				switch (days - Math.floor(days / 10) * 10) {
+					case 0:
+						dias_unidades.style.backgroundImage = "url('/0.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 1:
+						dias_unidades.style.backgroundImage = "url('/1.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 2:
+						dias_unidades.style.backgroundImage = "url('/2.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 3:
+						dias_unidades.style.backgroundImage = "url('/3.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 4:
+						dias_unidades.style.backgroundImage = "url('/4.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 5:
+						dias_unidades.style.backgroundImage = "url('/5.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 6:
+						dias_unidades.style.backgroundImage = "url('/6.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 7:
+						dias_unidades.style.backgroundImage = "url('/7.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 8:
+						dias_unidades.style.backgroundImage = "url('/8.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+					case 9:
+						dias_unidades.style.backgroundImage = "url('/9.png')";
+						dias_unidades.style.backgroundSize = "contain";
+						dias_unidades.style.backgroundPosition = "center";
+						break;
+				}
+
+			}, 1000);
+		</script>
+	</head>
+    <body class="bg-purple-700 text-white">
+	<div class="w-full flex flex-col lg:flex-row justify-center items-center h-screen gap-10"> 
+		<div class="flex flex-col items-center">
+			<div class="flex">
+				<div
+					id="dias_decenas"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+				<div
+					id="dias_unidades"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+			</div>
+			<p class="text-4xl font-bold uppercase mt-6">Días</p>
+		</div>
+		<div class="flex flex-col items-center">
+			<div class="flex">
+				<div
+					id="horas_decenas"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+				<div
+					id="horas_unidades"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+			</div>
+			<p class="text-4xl font-bold uppercase mt-6">Horas</p>
+		</div>
+		<div class="flex flex-col items-center">
+			<div class="flex">
+				<div
+					id="minutos_decenas"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+				<div
+					id="minutos_unidades"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+			</div>
+			<p class="text-4xl font-bold uppercase mt-6">Minutos</p>
+		</div>
+		<div class="flex flex-col items-center">
+			<div class="flex">
+				<div
+					id="segundos_decenas"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+				<div
+					id="segundos_unidades"
+					class="text-center text-2xl w-[100px] h-[100px] transition-all duration-700"
+				></div>
+			</div>
+			<p class="text-4xl font-bold uppercase mt-6">Segundos</p>
+		</div>
+    </div>
+		<div id="countdown" class="text-center text-2xl"></div>
+	</body>
+</html>
