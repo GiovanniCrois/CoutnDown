@@ -5,8 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Count Down</title>
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<link rel="stylesheet" href="animations.css" />
 		<script>
-			const targetDate = new Date("2026-08-16T00:00:00").getTime();
+			const targetDate = new Date("2026-08-16T12:30:00").getTime();
+
 			const interval = setInterval(() => {
 				const segundos_decenas = document.getElementById("segundos_decenas");
 				const segundos_unidades = document.getElementById("segundos_unidades");
@@ -32,6 +34,17 @@
 
 				// document.getElementById("countdown").innerText =
 				// 	`${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+				const decorativeItems = document.querySelectorAll(".stamp");
+				
+				decorativeItems.forEach((item) => {
+					if(seconds % 2 === 0){
+						item.style.transform = `rotate(${10}deg) translateY(-5px) scale(1.1)`;
+					}else{
+						item.style.transform = `rotate(${-10}deg) translateY(5px)`;
+					}
+
+				});
 
 				switch (Math.floor(seconds / 10)) {
 					case 0:
@@ -508,6 +521,8 @@ switch (Math.floor(days / 10)) {
 			<p class="text-4xl font-bold uppercase mt-6">Segundos</p>
 		</div>
     </div>
-		<div id="countdown" class="text-center text-2xl"></div>
+	<div class="stamp"></div>
+	<div id="countdown" class="text-center text-2xl "></div>
+
 	</body>
 </html>

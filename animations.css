@@ -1,0 +1,10 @@
+.stamp {
+    position: fixed;
+    top: 15px;
+    left: 300px;
+    width: 150px;
+    height: 150px;
+    background-position: 0% 0%;
+    background-size: cover;
+	background-image: url("poph.png");
+}
