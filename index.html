@@ -464,11 +464,13 @@
 					div.addEventListener("click", () => {
 						div.classList.add("hidden");
 					});
-					if(div.classList.contains("hidden")){
+					if (div.classList.contains("hidden")) {
 						div.classList.remove("hidden");
-						window.scrollTo({top: div.offsetTop - offset, behavior: "smooth"
+						window.scrollTo({
+							top: div.offsetTop - offset,
+							behavior: "smooth",
 						});
-					}else{
+					} else {
 						div.classList.add("hidden");
 					}
 				});
@@ -537,14 +539,62 @@
 		>
 			<div
 				id="stamp1"
-				class="place-self-center bg-cyan-300 size-[200px] border-r-7 border-b-6 border-black shadow-lg shadow-black stamp"
+				class="mt-6 justify-center place-self-center bg-[url('poph.png')] bg-contain bg-center bg-no-repeat w-[250px] h-[250px] stamp"
 			></div>
-		<div
-		id="surprice"
-		class="hidden place-self-center bg-cyan-300 w-dvw h-dvh border-r-7 border-b-6 border-black shadow-lg shadow-black "
-		>
-		Sorpresa dia uno
 		</div>
-		<div id="countdown" class="text-center text-2xl"></div>
+		<div
+			id="surprice"
+			class="absolute top-0 left-0 place-self-center bg-black/90 w-dvw h-dvh flex flex-col justify-center items-center gap-4 p-12"
+		>
+			<p class="text-md text-justify">
+				Hola mi amor. Este es la sorpresa que tenia preparada para ti. Te
+				explico como funciona. Como puedes ver es un contador regresivo, es el
+				tiempo que falta para vernos. Cada dia que pase, al despertar, pásate
+				por aquí. Una nueva sorpresa te estará esperando. Te amo, espero que
+				cada uno de estos detalles sea de tu agrado.
+			</p>
+			<p class="text-xs">
+				<span class="font-bold">Nota:</span> Para cerrar la sorpresa, solo
+				tienes que dar click en cualquier parte de la pantalla.
+			</p>
+			<p class="text-md text-justify font-bold">
+				Viernes 07 de Agosto de 2026.
+			</p>
+			<div class="mt-6 w-full flex flex-col gap-6 items-start">
+			<p>
+				<span class="text-lg text-red-500 font-bold">T</span>e amo, una frase
+				corta<br />
+				Pequeña, concisa, directa<br />
+				Trillada puede ser<br />
+				Repetitiva inclusive<br />
+			</p>
+
+			<p>
+				<span class="text-lg text-red-500 font-bold">E</span>n todo caso<br />
+				Y aun con todo lo dicho<br />
+				Un te amo nunca es en vano<br />
+				Nunca por costumbre<br />
+			</p>
+			<p>
+				<span class="text-lg text-red-500 font-bold">A</span>l contrario <br />
+				Siempre con intención<br />
+				Con el corazón en la mano<br />
+				Y la verdad por delante<br />
+			</p>
+			<p>
+				<span class="text-lg text-red-500 font-bold">M</span>e encanta decirte, Te amo<br />
+				¡Te amo!, que bien se siente<br />
+				¡Te amo!, Hoy quiero decírtelo <br />
+				Quizas mañana también lo diga<br />
+			</p>
+			<p>
+				<span class="text-lg text-red-500 font-bold">O</span> quizás, lo mas probable <br />
+				Te lo diga por siempre <br />
+				Y es que no me canso de decirlo<br />
+				Y con todo esto quiero decirte que…<br />
+			</p>
+			</div>
+			<p class="text-xs font-ligth">(lee lo rojo)</p>
+		</div>
 	</body>
 </html>
